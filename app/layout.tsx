@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Isfak Iqbal Chowdhury | AI & Mobile Engineer",
         description: "Aspiring AI & Mobile Engineer building intelligent systems and high-performance applications.",
-        url: "https://isfakiqbalchowdhury.dev",
+        url: "https://isfakiqbalchowdhury.me",
         siteName: "Isfak Iqbal Chowdhury Portfolio",
         images: [
             {
