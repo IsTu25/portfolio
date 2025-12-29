@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
+    --neon-green: #22c55e;
+    --electric-blue: #3b82f6;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+@layer utilities {
+    .text-neon-green {
+        color: var(--neon-green);
+    }
+
+    .text-electric-blue {
+        color: var(--electric-blue);
+    }
+
+    .bg-neon-green {
+        background-color: var(--neon-green);
+    }
+
+    .bg-electric-blue {
+        background-color: var(--electric-blue);
+    }
+
+    .border-neon-green {
+        border-color: var(--neon-green);
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .glass-nav {
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .animate-marquee {
+        animation: marquee 25s linear infinite;
+    }
+
+    .animate-marquee2 {
+        animation: marquee2 25s linear infinite;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
 }
